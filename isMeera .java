@@ -1,18 +1,20 @@
-public class Test {
-	public static void main(String[] args) {
-	
-		System.out.println(isMeera(new int [] {-4,0,1,0,2}));
-		System.out.println(isMeera(new int [] {-1,0,0,8,0}));
-		System.out.println(isMeera(new int[]{3, 5, -2}));
-	}
-	
-	static int isMeera (int [] a) {
-		for (int i=0 ;i<a.length;i++) {
-			if (i<a[i]) {
-				return 0;
-			}
-		}
-		return 1;
-	}
-}
 
+public class Pretest {
+
+	  static int isMeera(int[] a) {
+	        for (int a1 : a) {
+	            for (int a2 : a) {
+	                if (a1 == a2 * 2)
+	                    return 0;
+	            }
+	        }
+	        return 1;
+	    }
+
+	   public static void main(String[] args) {
+	   
+			System.out.println(isMeera(new int [] {8,3,4}));
+			System.out.println(isMeera(new int[]{3, 5, -2}));
+		   
+	   }
+}
