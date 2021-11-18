@@ -1,4 +1,4 @@
-public class Test {
+public class PrimeHappy {
 
     public static void main(String[] args) {
         System.out.println(isPrimeHappy(5));
@@ -7,30 +7,29 @@ public class Test {
         System.out.println(isPrimeHappy(8));
         System.out.println(isPrimeHappy(2));
     }
-public static boolean isprime(int n) {
-		
-		boolean prime=true;
-		 
-		if (n<=1) {
-			prime=false;
-		}
-		
-		for (int i=2 ; i<=Math.sqrt(n);i++) {
-			if (n%i==0) {
-				prime=false ;
-				break;
-			}
-		}
-		return prime ;
-	}
 
     static int isPrimeHappy(int n) {
+        int number = 2;
+        boolean primeFlag = false;
         int sum = 0;
-        for(int i=2; i<n; i++) {
-            if(isprime(i)) sum+=i;
+        while (number < n) {
+            if (isPrime(number)) {
+                primeFlag = true;
+                sum += number;
+            }
+            number++;
         }
-        return sum!=0 && sum%n==0 ? 1 : 0;
+        if (primeFlag && sum % n == 0)
+            return 1;
+        else return 0;
     }
 
-   
+    static boolean isPrime(int n) {
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0)
+                return false;
+        }
+
+        return n > 0;
+    }
 }
